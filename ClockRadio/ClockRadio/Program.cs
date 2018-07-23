@@ -8,8 +8,11 @@ namespace ClockRadio
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            ClockRadioClass ClockRadioClass = new ClockRadioClass();
+            ClockRadioClass.CurrentTime();
+            ClockRadioClass.SetAlarm();
         }
     }
 }
