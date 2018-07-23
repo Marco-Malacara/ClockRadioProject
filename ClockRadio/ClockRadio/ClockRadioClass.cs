@@ -11,7 +11,7 @@ namespace ClockRadio
         public DateTime currentTime; //Display Current Time X 
         public double currentAlarmTime; // display current alarm time x
         public double setAlarm; // user ability to set alarm x
-        public bool alarmOnOff; //turn alarm on and off
+        public bool alarmOnOff; //turn alarm on and off x
         public double changeRadioStation; // dipslay current radio station / change radio station
 
         public void CurrentTime()
@@ -35,10 +35,27 @@ namespace ClockRadio
                     Console.WriteLine("Congrats! Your alarm has been turned on!");
                     Console.ReadLine();
                 }
-                else
+                else if (setAlarm == 2)
                 {
-                    Console.WriteLine("Your 11:00A.M. alarm is been turned on!");
+                    Console.WriteLine("Your alarm is now turned off!");
+                    Console.ReadLine();
                 }
+            }
+            else if (currentAlarmTime == 2)
+            {
+                Console.WriteLine("Would you like to turn your 11:00A.M. alarm on? Press 1 for Yes or 2 for No.");
+                double.TryParse(Console.ReadLine(), out setAlarm);
+                if (setAlarm == 1)
+                {
+                    Console.WriteLine("Congrats! Your alarm has been turned on!");
+                    Console.ReadLine();
+                }
+                else if (setAlarm == 2)
+                {
+                    Console.WriteLine("Your alarm is now turned off!");
+                    Console.ReadLine();
+                }
+
             }
         }
     }
