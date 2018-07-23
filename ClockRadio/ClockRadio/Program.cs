@@ -13,6 +13,7 @@ namespace ClockRadio
             ClockRadioClass ClockRadioClass = new ClockRadioClass();
             ClockRadioClass.CurrentTime();
             ClockRadioClass.CurrentAlarm();
+            ClockRadioClass.RadioStation();
         }
     }
 }

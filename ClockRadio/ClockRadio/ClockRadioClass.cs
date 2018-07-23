@@ -10,9 +10,10 @@ namespace ClockRadio
     {
         public DateTime currentTime; //Display Current Time X 
         public double currentAlarmTime; // display current alarm time x
-        public double setAlarm; // user ability to set alarm x
-        public bool alarmOnOff; //turn alarm on and off x
-        public double changeRadioStation; // dipslay current radio station / change radio station
+        public double setAlarm; // user ability to set alarm and turn it on or off x
+        public double radioStation; // dipslay current radio station x
+        public double changeRadioStation; // ability to change the radio station
+
 
         public void CurrentTime()
         {
@@ -53,6 +54,31 @@ namespace ClockRadio
                 else if (setAlarm == 2)
                 {
                     Console.WriteLine("Your alarm is now turned off!");
+                    Console.ReadLine();
+                }
+            }
+        }
+        public void RadioStation()
+        {
+            Console.WriteLine("You're currently listing to 100.8 DevCode focus beats! Would you like to change the radio station? If yes press 1 if no press 2!");
+            double.TryParse(Console.ReadLine(), out radioStation);
+            if (radioStation == 1)
+            {
+                Console.WriteLine("Great! What station would you like to listen to? Press 1 for DevCode InTheZone beats, 2 for LetsGetToWork.DevCodeFM, 3 for random.");
+                double.TryParse(Console.ReadLine(), out changeRadioStation);
+                if (changeRadioStation == 1)
+                {
+                    Console.WriteLine("You are now listing to DevCode InTheZOne beats!");
+                    Console.ReadLine();
+                }
+                else if (changeRadioStation == 2)
+                {
+                    Console.WriteLine("You are now listing to LetsGetToWork.DevCodeFM!");
+                    Console.ReadLine();
+                }
+                else
+                {
+                    Console.WriteLine("You are now listing to LowFi hip-hop!");
                     Console.ReadLine();
                 }
 
